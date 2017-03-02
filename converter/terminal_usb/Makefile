@@ -84,7 +84,7 @@ PS2_USE_USART = yes	# uses hardware USART engine for PS/2 signal receive(recomen
 
 
 #---------------- Programming Options --------------------------
-PROGRAM_CMD = teensy_loader_cli -mmcu=$(MCU) -w -v $(TARGET).hex
+PROGRAM_CMD = teensy-loader-cli -mmcu=$(MCU) -w -v $(TARGET).hex
 
 
 # Search Path
