@@ -9,10 +9,14 @@ Article: http://geekhack.org/index.php?topic=27272.0
 
 CONNECTION
 ----------
-Keyboard    ATMega32U4
-----------------------
-Data:       PD2
-Clock:      PD5
+Keyboard    ATMega32U4   Connector    Wire
+------------------------------------------
+VCC         VCC          Black        Black
+Data:       PD2          Red          Red
+Clock:      PD5          Green        Yellow
+GND         GND          Yellow       White
+PE          GND          Brown        PE
+
 
 And VCC and GND, of course. See RESOURCE for keyboard connector pin assign.
 
