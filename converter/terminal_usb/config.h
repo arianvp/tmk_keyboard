@@ -33,7 +33,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 /* legacy keymap support */
-#define USE_LEGACY_KEYMAP
+// #define USE_LEGACY_KEYMAP
 
 
 /* key combination for command */
