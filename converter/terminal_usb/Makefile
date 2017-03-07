@@ -1,16 +1,32 @@
 # Target file name (without extension).
-TARGET = terminal_lufa
+TARGET ?= terminal_lufa
 
 # Directory common source filess exist
-TMK_DIR = ../../tmk_core
+TMK_DIR ?= ../../tmk_core
 
 # Directory keyboard dependent files exist
-TARGET_DIR = .
+TARGET_DIR ?= .
 
 # keyboard dependent files
-SRC = 	keymap.c \
-	matrix.c \
+SRC ?= 	matrix.c \
 	led.c
+
+# Keymap file
+#
+ifdef UNIMAP_ENABLE
+    KEYMAP_FILE = unimap
+else
+    ifdef ACTIONMAP_ENABLE
+	KEYMAP_FILE = actionmap
+    else
+	KEYMAP_FILE = keymap
+    endif
+endif
+ifdef KEYMAP
+    SRC := $(KEYMAP_FILE)_$(KEYMAP).c $(SRC)
+else
+    SRC := $(KEYMAP_FILE)_plain.c $(SRC)
+endif
 
 CONFIG_H = config.h
 
